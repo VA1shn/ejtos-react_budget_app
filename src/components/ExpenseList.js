@@ -11,15 +11,18 @@ const ExpenseList = () => {
             <tr>
               <th scope="col">Department</th>
               <th scope="col">Allocated Budget</th>
-              <th scope="col">Increase by 10</th>
+              <th scope="col">Increase/Decrease by 10</th>
               <th scope="col">Delete</th>
             </tr>
           </thead>
-            <tbody>
-            {expenses.map((expense) => (
-                <ExpenseItem id={expense.id} key={expense.id} name={expense.name} cost={expense.cost} />
-            ))}
-            </tbody>
+          {expenses.map((expense) => (
+          <ExpenseItem
+            key={expense.id}
+            name={expense.name}
+            cost={expense.cost}
+            currency= '$'  // Pass the currency symbol here
+          />
+        ))}
         </table>
     );
 };
